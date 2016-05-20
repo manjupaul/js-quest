@@ -3,22 +3,19 @@ const path      = require('path');
 const merge     = require('webpack-merge');
 
 const TARGET = process.env.npm_lifecycle_event;
-const COMMON_PATHS = {
-    css: path.join(__dirname, '/src/styles')
-};
 
 const R_PATHS = {
     app: path.join(__dirname, '/src/react'),
-    dist: path.join(__dirname, '/dist')
+    dist: path.join(__dirname, '/dist'),
 };
 
 const common = {
     module: {
         loaders: [
             { test: /\.scss$/, loaders: ["style", "css", "sass"] },
-        ]
+        ],
     },
-    devtool: 'eval-source-map'
+    devtool: 'eval-source-map',
 };
 
 const reactCommon = {
@@ -78,11 +75,10 @@ const server = {
     ]
 };
 
-if (TARGET == "build:react" || !TARGET) {
+if (TARGET === "build:react" || !TARGET) {
     module.exports = merge(common, reactCommon);
-    
 }
 
-if (TARGET == "serve:react" || !TARGET) {
+if (TARGET === "serve:react" || !TARGET) {
     module.exports = merge(common, reactCommon, server);
 }

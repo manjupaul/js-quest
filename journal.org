@@ -76,4 +76,16 @@
   #+END_EXAMPLE
 
 ** Setting Up React
-   1. NPM install babel-loader, babel-core, webpack
+   What did we do?
+   1. Set up basic file/folder structure
+   2. Setup a webpack config (using survivejs guide)
+      - using webpack merge to split configs
+      - using babel and babelrc to handle transpiling
+      - using sass-loader
+      - setup webpack dev server
+      - use npm scripts to run commands
+   3. Eslint and Flow
+      - using airbnb eslint (with some modifications)
+      - set up flow typechecker in babel
+
+   Obervation: excluding webpack and css related packages, introduced 12 third-party npm DEV dependencies just for transpiling and code QA
