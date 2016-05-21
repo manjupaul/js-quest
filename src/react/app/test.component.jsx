@@ -1,18 +1,18 @@
 // @flow
 import React from 'react';
 
-const yarg: Array<string> = 'foo';
-
 export default class App extends React.Component {
 
     foo: number;
 
     constructor() {
-        this.foo = 'hello';
+        super();
+        this.foo = 20;
     }
 
     render() {
         return <h1>{this.foo}</h1>;
     }
 }
+
 

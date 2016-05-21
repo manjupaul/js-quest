@@ -4,6 +4,7 @@
   "plugins": [ "flowtype" ],
   "rules": {
     "indent": ["error", 4],
+    "comma-dangle": 0,
     "react/sort-comp": 0
   }
 }

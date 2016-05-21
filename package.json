@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:react": "node ./node_modules/webpack/bin/webpack.js",
-    "serve:react": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build:react": "node ./node_modules/webpack/bin/webpack.js --config ./config/webpack.dev.react.config.js",
+    "serve:react": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./config/webpack.dev.react.config.js",
     "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
   "author": "",
@@ -32,6 +32,7 @@
     "eslint-plugin-react": "^5.1.1",
     "flow": "^0.2.3",
     "flow-bin": "^0.25.0",
+    "flow-status-webpack-plugin": "^0.1.4",
     "node-sass": "^3.7.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
