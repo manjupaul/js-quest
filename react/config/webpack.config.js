@@ -1,45 +1,51 @@
 const webpack = require('webpack');
-const path = require('path');
+const fs = require('fs');
 const merge = require('webpack-merge');
 
 const FlowStatusWebpackPlugin = require('flow-status-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 
+const INCLUDE_PATHS = [
+    fs.realpathSync(__dirname + '/../src'),
+    fs.realpathSync(__dirname + '/../../shared/styles')
+];
+
 const PATHS = {
-    app: path.join(__dirname, '../src/react'),
-    build: path.join(__dirname, '../build'),
+    app: './src/index.jsx',
+    build: './build'
 };
 
 const common = {
     entry: {
-        app: PATHS.app,
+        app: PATHS.app
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
     },
     output: {
         path: PATHS.build,
-        filename: 'react-bundle.js',
+        filename: 'react-bundle.js'
     },
     devtool: 'eval-source-map',
     module: {
         loaders: [
-            { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
-            {
-                test: /\.jsx?$/,
-                // Enable caching for improved performance during development
-                // It uses default OS directory by default. If you need something
-                // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
-                loaders: ['babel?cacheDirectory'],
-                // Parse only app files! Without this it will go through entire project.
-                // In addition to being slow, that will most likely result in an error.
-                //include: R_PATHS.app
-            },
-        ],
+            { test: /\.scss$/, loaders: ['style', 'css', 'sass'], include: INCLUDE_PATHS },
+            { test: /\.jsx?$/, loaders: ['babel'], include: INCLUDE_PATHS }
+        ]
     },
     plugins: [
-        new FlowStatusWebpackPlugin()
+        new FlowStatusWebpackPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'commons',
+            filename: 'commons-bundle.js'
+        }),
+        new HtmlWebPackPlugin({
+            template: './src/index.html',
+            inject: 'body'
+        })
     ],
 };
 
@@ -68,15 +74,12 @@ const server = {
         host: process.env.HOST,
         port: process.env.PORT,
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
 };
 
-if (TARGET === 'build:react' || !TARGET) {
+if (TARGET === 'build' || !TARGET) {
     module.exports = merge(common, {});
 }
 
-if (TARGET === 'serve:react' || !TARGET) {
+if (TARGET === 'server' || !TARGET) {
     module.exports = merge(common, server);
 }

@@ -7,7 +7,7 @@ export default class App extends React.Component {
 
     constructor() {
         super();
-        this.foo = 20;
+        this.foo = 30;
     }
 
     render() {
