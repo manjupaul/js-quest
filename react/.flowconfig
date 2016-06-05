@@ -1,2 +1,8 @@
 [ignore]
-.*/node_modules/.*
+.*/node_modules/fbjs/.*
+.*/node_modules/config-chain/test/broken.json
+.*/node_modules/npmconf/test/.*
+
+[options]
+esproposal.class_instance_fields=enable
+esproposal.decorators=ignore

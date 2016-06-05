@@ -3,8 +3,11 @@
   "parser": "babel-eslint",
   "plugins": [ "flowtype" ],
   "rules": {
+    "no-trailing-spaces": 0,
     "indent": ["error", 4],
     "comma-dangle": 0,
-    "react/sort-comp": 0
+    "react/sort-comp": 0,
+    "react/prop-types": 0,
+    "react/jsx-indent": 0
   }
 }
