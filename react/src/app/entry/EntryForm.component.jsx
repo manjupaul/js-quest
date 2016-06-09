@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import autobind from 'autobind-decorator';
+import classNames from 'classnames';
 
 type Props = {
     placeholder: ?string
@@ -75,17 +76,25 @@ export class EntryForm extends React.Component<DefaultProps, Props, State> {
         
         return 'VALID';
     }
-
+    
     render() {
+        let errorClass = classNames({
+            'entry-form__errmsg': true,
+            'is-shown': this.state.errorMessage
+        });
+        
         return (
-            <form className="entry" noValidate="" onSubmit={this.onFormSubmit}>
-                <input type="text"
-                       value={this.state.username}
-                       placeholder={this.props.placeholder}
-                       onChange={this.onNameEntry}
+            <form className="entry-form" noValidate="" onSubmit={this.onFormSubmit}>
+                <input 
+                    type="text" 
+                    value={this.state.username}
+                    placeholder={this.props.placeholder}
+                    onChange={this.onNameEntry}
                 />
                 <button type="submit">Enter Game</button>
-                <span class="entry__errmsg">{this.state.errorMessage}</span>
+                <span className={errorClass}>
+                    {this.state.errorMessage}
+                </span>
             </form>
         );
     }

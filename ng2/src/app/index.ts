@@ -1,2 +1,2 @@
 export * from './environment';
-export * from './js-quest.component';
+export * from './app.component';

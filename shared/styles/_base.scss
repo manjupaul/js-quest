@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Corben:400,700|Noto+Sans:400,700,400italic);
+
+$corben: "Corben", Georgia, "Times New Roman", Times, serif;
+$noto: "Noto Sans", "Helvetica Neue", Helvetica, Arials, sans-serif;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  font-family: $noto;
+}
+
+h1,h2,h3 {
+  font-family: $corben;
+  font-weight: 400;
+}
+
+button {
+  background-color: rebeccapurple;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: .5rem;
+  border: 0;
+  padding: .5rem .85rem;
+}

@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Corben:400,700|Noto+Sans:400,700,400italic);
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html, body {
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arials, sans-serif; }
+
+h1, h2, h3 {
+  font-family: "Corben", Georgia, "Times New Roman", Times, serif;
+  font-weight: 400; }
+
+button {
+  background-color: rebeccapurple;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: .5rem;
+  border: 0;
+  padding: .5rem .85rem; }
+
+.welcome {
+  margin: 0 auto;
+  max-width: 80%;
+  text-align: center; }
+
+.welcome__errmsg {
+  color: darkred; }
+
+.entry-form input {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "Corben", Georgia, "Times New Roman", Times, serif; }
+
+.entry-form button {
+  margin: 1rem auto 0 auto;
+  display: block; }
+
+.entry-form__errmsg {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: #fff;
+  font-size: .8rem;
+  background-color: darkred;
+  padding: .5rem 1rem;
+  margin-top: 1rem; }
+  .entry-form__errmsg.is-shown {
+    opacity: 1; }
