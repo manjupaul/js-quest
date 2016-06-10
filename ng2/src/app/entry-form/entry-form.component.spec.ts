@@ -37,7 +37,7 @@ describe('Component: EntryForm', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-entry-form></app-entry-form>
+    <jsq-entry-form></jsq-entry-form>
   `,
   directives: [EntryFormComponent]
 })
