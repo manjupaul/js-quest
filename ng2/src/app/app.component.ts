@@ -8,5 +8,4 @@ import { EntryFormComponent } from './entry-form';
     directives: [EntryFormComponent]
 })
 export class AppComponent {
-    
 }

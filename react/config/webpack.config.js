@@ -18,6 +18,9 @@ const PATHS = {
 };
 
 const common = {
+    externals: {
+      'react': 'React'
+    },
     entry: {
         app: PATHS.app
     },
@@ -32,7 +35,8 @@ const common = {
     module: {
         loaders: [
             { test: /\.scss$/, loaders: ['style', 'css', 'sass'], include: INCLUDE_PATHS },
-            { test: /\.jsx?$/, loaders: ['babel'], include: INCLUDE_PATHS }
+            { test: /\.jsx?$/, loaders: ['babel'], include: INCLUDE_PATHS },
+            { test: /\.json$/, loaders: ['json'], include: INCLUDE_PATHS }
         ]
     },
     plugins: [
@@ -80,6 +84,6 @@ if (TARGET === 'build' || !TARGET) {
     module.exports = merge(common, {});
 }
 
-if (TARGET === 'server' || !TARGET) {
+if (TARGET === 'server') {
     module.exports = merge(common, server);
 }

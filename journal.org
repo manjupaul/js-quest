@@ -1,58 +1,57 @@
-* JS Quest
-** What is this?
-   JS Quest is an attempt to solve the age-old question -- which Javascript development stack is better? Okay, not really. The answer to that question is and always has been: whichever one helps you ship quality software quickly. But trying to highlight the salient differences between stacks is tricky. Too many articles, blog posts and forum discussion often focus too much on the individual feature list of a given stack and less on the experience of working within each stack day-to-day. There is also the problem of reference applications (I'm looking at you, TodoApp) which provide code samples in each stack, but doesn't provide a good reference for real world software development.
+* What is this?
+  JS Quest is an attempt to solve the age-old question -- which Javascript development stack is better? Okay, not really. The answer to that question is and always has been: whichever one helps you ship quality software quickly. But trying to highlight the salient differences between stacks is tricky. Too many articles, blog posts and forum discussion often focus too much on the individual feature list of a given stack and less on the experience of working within each stack day-to-day. There is also the problem of reference applications (I'm looking at you, TodoApp) which provide code samples in each stack, but doesn't provide a good reference for real world software development.
 
-   JS Quest is an attempt to journal the create a non-trivial (yet not too complex) application using two different development stacks: React and Angular 2. As of this writing, these are the hottest two techs in the front-end universe. By developing the same application in both of these stack in tandem, we can quickly see how each one operates given the same set of requirements, and gain an appreciation for not just what the final product looks like, but what the journey to get there involves.
+  JS Quest is an attempt to journal the create a non-trivial (yet not too complex) application using two different development stacks: React and Angular 2. As of this writing, these are the hottest two techs in the front-end universe. By developing the same application in both of these stack in tandem, we can quickly see how each one operates given the same set of requirements, and gain an appreciation for not just what the final product looks like, but what the journey to get there involves.
 
-** About Me
-   I've been coding websites since the late 90s, and have about a decade of front-end coding under my belt. My professional career has spanned a decade, working heavily with PHP, Rails, Javascript and HTML/CSS. As javascript frameworks go, I've worked with both Backbone and Angular 1, but have yet to do any serious work with Angular 2 or React. So I'll be diving into each stack fairly green (although I've done a LOT of reading on both).
+* About Me
+  I've been coding websites since the late 90s, and have about a decade of front-end coding under my belt. My professional career has spanned a decade, working heavily with PHP, Rails, Javascript and HTML/CSS. As javascript frameworks go, I've worked with both Backbone and Angular 1, but have yet to do any serious work with Angular 2 or React. So I'll be diving into each stack fairly green (although I've done a LOT of reading on both).
 
 
-** The App
-   As for what app we're building, I've settled on doing a small browser-based game, in the style of a turn-based hack and slash dungeon crawler. I chose a game because it's most likely to keep my interest longer, and I would consider myself a domain expert in playing RPGs. As the focus is really on the process and technology, the actual game engine work will be kept simple and straightforward.
+* The App
+  As for what app we're building, I've settled on doing a small browser-based game, in the style of a turn-based hack and slash dungeon crawler. I chose a game because it's most likely to keep my interest longer, and I would consider myself a domain expert in playing RPGs. As the focus is really on the process and technology, the actual game engine work will be kept simple and straightforward.
 
-   Here's a rough outline of what a user can expect:
+  Here's a rough outline of what a user can expect:
 
-   1. Greeted with a start page asking for their name
-   2. Asked to choose from 3 basic character classes: Fighter, Rogue, Mage
-   3. Will allocate some stat points to their base state, and pick some starting items for their inventory
-   4. Upon entering gameplay, the player will be shown a very basic grid map of the dungeon which they may navigate
-   5. As they move around, they may encounter monsters which will put them in a simple combat interface.
-   6. Killing monsters rewards items and XP.
+  1. Greeted with a start page asking for their name
+  2. Asked to choose from 3 basic character classes: Fighter, Rogue, Mage
+  3. Will allocate some stat points to their base state, and pick some starting items for their inventory
+  4. Upon entering gameplay, the player will be shown a very basic grid map of the dungeon which they may navigate
+  5. As they move around, they may encounter monsters which will put them in a simple combat interface.
+  6. Killing monsters rewards items and XP.
 
-   That's it. At least to start. Through this small app, I aim to evaluate how each development stack operates when doing the following:
+  That's it. At least to start. Through this small app, I aim to evaluate how each development stack operates when doing the following:
 
-   - Basic rendering of stateful components
-   - How app state is modeled and managed
-   - How each stack works with forms and validation
-   - How each stack handles browser-based URL routing
-   - Ease of doing CSS animations and SVG rendering
-   - Workflow for unit and e2e testing
-   - Overall performance and filesize
+  - Basic rendering of stateful components
+  - How app state is modeled and managed
+  - How each stack works with forms and validation
+  - How each stack handles browser-based URL routing
+  - Ease of doing CSS animations and SVG rendering
+  - Workflow for unit and e2e testing
+  - Overall performance and filesize
 
-** The Stacks
-   As this is designed to be a real-world test, I won't limit myself to just the 'out-of-box' experience for either stack. My intent is to represent the most modern thinking around how developers should work with each stack. Even I know that trying to compare Angular and React is a little bit like apples and oranges. So I'll pull in additional libraries and plugins as needed, as long as I feel they represent a solid consensus for use among their respective communities. I also intend to embrace the philosophical difference in development style as well.
+* The Stacks
+  As this is designed to be a real-world test, I won't limit myself to just the 'out-of-box' experience for either stack. My intent is to represent the most modern thinking around how developers should work with each stack. Even I know that trying to compare Angular and React is a little bit like apples and oranges. So I'll pull in additional libraries and plugins as needed, as long as I feel they represent a solid consensus for use among their respective communities. I also intend to embrace the philosophical difference in development style as well.
 
-   For both stacks, I plan to use Firebase for data persistence. However, I do not plan to share code between the apps so as not to bias one implementation versus the other.
+  For both stacks, I plan to use Firebase for data persistence. However, I do not plan to share code between the apps so as not to bias one implementation versus the other.
 
-*** Angular 2
-    - The framework is currently in pre-release, so I will start with the latest candidate and upgrade to the release version later
-    - I will use the provided cli interface for generating files
-    - Will use Typescript, as it comes recommended
-    - Will utilize RxJs, as it's a recommended piece of Angular 2's tooling
-    - Will use a reative redux implementation called @ngrx/store
-    - I aim to take advantange of some functional patterns, especially when it comes to immutable data, but will also embrance Angular's more classical OO style where it makes sense
+** Angular 2
+   - The framework is currently in pre-release, so I will start with the latest candidate and upgrade to the release version later
+   - I will use the provided cli interface for generating files
+   - Will use Typescript, as it comes recommended
+   - Will utilize RxJs, as it's a recommended piece of Angular 2's tooling
+   - Will use a reative redux implementation called @ngrx/store
+   - I aim to take advantange of some functional patterns, especially when it comes to immutable data, but will also embrance Angular's more classical OO style where it makes sense
 
-*** React
-    - Using the latest version
-    - Will use plain ol' redux for state management
-    - Will embrace functional programming patterns as much as makes sense
-    - Will use Rambda.js as my go-to functional library
-    - Will use Flow for typing
+** React
+   - Using the latest version
+   - Will use plain ol' redux for state management
+   - Will embrace functional programming patterns as much as makes sense
+   - Will use Rambda.js as my go-to functional library
+   - Will use Flow for typing
 
-*** Other Tech
-    - Gulp for transpiling and bundling
-    - SCSS for CSS. We'll share this code.
+** Other Tech
+   - Gulp for transpiling and bundling
+   - SCSS for CSS. We'll share this code.
 
 
 * Part One: Standing Up
@@ -133,4 +132,21 @@
 
 *** End Part 1
 
-    I think this is a good stopping point for now. We've done very basic setup of our app, and gotten a basic component rendering on the page.
+    I think this is a good stopping point for now. We've done very basic setup of our app, and gotten a basic component rendering on the page. It's not much to look at right now, but it's functioning.
+
+*** The Good
+
+    1. Writing our simple component was a breeze in both frameworks. Being able to encapsulate UI behavior without having to worry about DOM manipulation continues to be a powerful way of doing things.
+
+    2. In additional, Angular 2's command line utility really did allow us to bootstrap our app with very little effort. On one hand, I don't have much insight into how the compilation and serving works. On the other, I can get started writing app logic right away. I think it's a pretty big win, overall.
+
+    3. On the React side, there's very little that's needed to get started. Just import the library, and you're off to the races.
+
+*** The Bad
+
+    1. Honestly, I found the process of setting up Webpack to be frustrating. Even with a fairly decent understanding of what the tool is doing, I still felt a little lost setting up the config file. I was working heavily from blogs and tutorials, and it never really clicked. I poured through a lot of sample configs, and each one did things slightly differently.
+
+       In addition Wepback itself, there is also Babel's modular configuration, as well as integrating the Flow server. For as easy as it is to start writing react files, getting a bundle system like this set up feels like a high-barrier to entry. A good build system is a critical part of infrastructure, so putting thought an energy into it isn't the end of the world. But it does feel like a lot of grunt work.
+
+* Part Two: Let the Testing Commence
+I'm eager to get starting developing more application log, but I feel I need to focus on just a little more setup first. Namely, I want to be able to test the application as I'm developing. I'm a firm believer in the benefits that testing provides.

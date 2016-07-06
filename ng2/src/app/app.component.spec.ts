@@ -17,6 +17,5 @@ describe('App: JsQuest', () => {
 
   it('should have as title \'js-quest works!\'',
       inject([AppComponent], (app: AppComponent) => {
-      //expect(app.title).toEqual('js-quest works!');
   }));
 });
