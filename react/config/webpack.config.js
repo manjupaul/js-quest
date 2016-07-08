@@ -18,9 +18,6 @@ const PATHS = {
 };
 
 const common = {
-    externals: {
-      'react': 'React'
-    },
     entry: {
         app: PATHS.app
     },

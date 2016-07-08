@@ -4,9 +4,7 @@ import {
     describe,
     expect,
     it,
-    inject,
-    fakeAsync
-    tick
+    inject
 } from '@angular/core/testing';
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
@@ -46,7 +44,7 @@ describe('Component: EntryForm', () => {
     }));
 
     it('should not show an error on load', inject([], () => {
-        return testBuilt.then((fixture: ComponntFixture<any>) => {
+        return testBuilt.then((fixture: ComponentFixture<any>) => {
             let compiled = fixture.debugElement.nativeElement;
             let errorEl = compiled.querySelector('.entry-form__errmsg');
             expect(errorEl.className).not.toContain('is-shown');
