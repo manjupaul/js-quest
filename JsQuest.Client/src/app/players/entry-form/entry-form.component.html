@@ -1,0 +1,13 @@
+<form class="entry-form"
+      [formGroup]="userForm"
+      (ngSubmit)="onFormSubmit($event)">
+    <input type="text"
+           placeholder="{{placeholder}}"
+           [formControl]="usernameInput">
+    <button type="submit">Enter Game</button>
+    <span class="entry-form__errmsg"
+          [ngClass]="{ 'is-shown': errorMessage }">
+        {{errorMessage}}
+    </span>
+</form>
+
