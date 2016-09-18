@@ -2,33 +2,37 @@ import { Action, ActionReducer } from '@ngrx/store';
 import { Player } from './players.models';
 import { PlayerActions } from './players.actions';
 
-export interface PlayerState {
+export interface PlayerSearchState {
     name?: string;
     searching: boolean;
-    players?: Player[];
+    searchComplete: boolean;
+    player: Player;
 }
 
-const initialState: PlayerState = {
+const initialState: PlayerSearchState = {
     name: null,
     searching: false,
-    players: null
+    searchComplete: false,
+    player: null
 };
 
-const playersReducer: ActionReducer<PlayerState> =  (state: PlayerState = initialState,  action: Action) => {
-  switch (action.type) {
-    case PlayerActions.SEARCH:
-      return Object.assign({}, state, {
-        searching: true
-      });
-    case PlayerActions.SEARCH_COMPLETE:
-      return Object.assign({}, state, {
-        players: action.payload,
-        searching: false
-      });
-    default:
-      return state;
-  }
+const playerSearch: ActionReducer<PlayerSearchState> =  (state: PlayerSearchState = initialState,  action: Action) => {
+    switch (action.type) {
+        case PlayerActions.SEARCH:
+            return Object.assign({}, state, {
+                searching: true,
+                name: action.payload
+            });
+        case PlayerActions.SEARCH_COMPLETE:
+            return Object.assign({}, state, {
+                player: action.payload,
+                searching: false,
+                searchComplete: true
+            });
+        default:
+            return state;
+    }
 };
 
-export default playersReducer;
+export default playerSearch;
 

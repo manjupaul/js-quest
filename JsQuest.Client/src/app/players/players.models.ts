@@ -1,5 +1,9 @@
+import {Hero} from '../heroes';
+
 export interface Player {
-    name: string,
-    createdOn: Date,
-    lastPlayed: Date
+    email: string;
+    displayName: string;
+    lastLoginAt: Date;
+    ipAddress: string;
+    heroes: Hero[];
 }

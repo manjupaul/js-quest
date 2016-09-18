@@ -1,0 +1,38 @@
+<section class="new-hero__ident">
+  <form>
+    <h2><label>Create Your Hero!</label></h2>
+    <input #heroName
+           class="input-underline"
+           placeholder="Enter a name."
+           type="text"/>
+  </form>
+</section>
+<section class="new-hero__classes">
+  <h2>Choose A Class:</h2>
+  <ul>
+    <li class="hclass-summary is-selected">
+      <svg class="icon">
+        <use xlink:href="icons.svg#swordman"></use>
+      </svg>
+      <h3 class="hclass-summary__title">Fighter</h3>
+      <p class="hclass-summary__desc">Strength and martial prowess allow you to wield weapons with deadly force and stand toe-to-toe with the most dangerous foes.</p>
+    </li>
+    <li class="hclass-summary">
+      <svg class="icon">
+        <use xlink:href="icons.svg#sprint"></use>
+      </svg>
+      <h3 class="hclass-summary__title">Rogue</h3>
+      <p class="hclass-summary__desc">Agility and cunning allow you to defeat your enemies before they even know you're coming.</p>
+    </li>
+    <li class="hclass-summary">
+      <svg class="icon">
+        <use xlink:href="icons.svg#aura"></use>
+      </svg>
+      <h3 class="hclass-summary__title">Wizard</h3>
+      <p class="hclass-summary__desc">Magic and arcane knowledge allow you to command mystical forces to destroy and confound your foes.</p>
+    </li>
+  </ul>
+</section>
+<div class="new-hero__submit">
+  <button class="button">Continue ></button>
+</div>

@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
-import { StoreLogMonitorComponent } from '@ngrx/store-log-monitor';
-import { EntryFormComponent } from './players';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { WelcomeComponent } from './pages/welcome';
 
 @Component({
-    moduleId: module.id,
     selector: 'jsq-app',
     templateUrl: 'app.component.html',
-    directives: [EntryFormComponent, StoreLogMonitorComponent]
+    encapsulation: ViewEncapsulation.None,
+    styleUrls: ['app.component.scss']
 })
 export class AppComponent {
 }

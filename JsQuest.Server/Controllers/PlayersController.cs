@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;  
 using System.Linq;  
 using JsQuest.Models;  
@@ -8,22 +9,26 @@ namespace JsQuest.Controllers {
     [Route("api/[controller]")]
     public class PlayersController : Controller
     {
-        private readonly PlayerContext _context;
+        private readonly QuestingContext _context;
 
-        public PlayersController(PlayerContext context)
+        public PlayersController(QuestingContext context)
         {
             _context = context;
         }
 
-        // GET api/players
-        public IEnumerable<Player> Get()
+        // GET api/players?[email=Foo]
+        public IEnumerable<Player> Get([FromQuery] string email)
         {
-            return _context.Players.ToList();
+            if (!String.IsNullOrEmpty(email)) {
+                return _context.Players.Where(x => String.Equals(x.Email, email, StringComparison.OrdinalIgnoreCase));
+            } else {
+                return _context.Players.ToList();
+            }
         }
 
         // GET api/players/5
         [HttpGet("{id}")]
-        public Player Get(int id)
+        public Player GetPlayer(string id)
         {
             return _context.Players.FirstOrDefault(x => x.Id == id);
         }

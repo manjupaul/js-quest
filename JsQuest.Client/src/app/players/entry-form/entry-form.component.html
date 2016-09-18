@@ -1,13 +1,11 @@
 <form class="entry-form"
-      [formGroup]="userForm"
-      (ngSubmit)="onFormSubmit($event)">
-    <input type="text"
-           placeholder="{{placeholder}}"
-           [formControl]="usernameInput">
-    <button type="submit">Enter Game</button>
-    <span class="entry-form__errmsg"
-          [ngClass]="{ 'is-shown': errorMessage }">
-        {{errorMessage}}
-    </span>
+      *ngIf="!playerSearch.searchComplete"
+      (submit)="onFormSubmit($event, playerName.value)">
+    <h2>Record Your Name in the Log of Adventurers?</h2>
+    <input #playerEmail
+           class="input-underline"
+           type="text"
+           placeholder="Write your name in the book...">
+    <button routerLink="/hero/new" class="button" type="submit">Enter Dungeon</button>
 </form>
 

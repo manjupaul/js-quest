@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using JsQuest.Models;
+using JsQuest.Models;  
 
 namespace JsQuest {
     public class Startup
@@ -31,6 +31,7 @@ namespace JsQuest {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseSession(); 
             app.UseCors(builder => 
                 builder.AllowAnyOrigin().AllowAnyHeader());
             app.UseMvc();
@@ -41,9 +42,15 @@ namespace JsQuest {
             // Add framework services.
             services.AddMvc();
             services.AddCors();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddIdentity<Player, IdentityRole>()
+                    .AddEntityFrameworkStores<QuestingContext>()
+                    .AddDefaultTokenProviders();
+
 
             var connectionString = Configuration.GetConnectionString("development");
-            services.AddDbContext<PlayerContext>(
+            services.AddDbContext<QuestingContext>(
                 opts => opts.UseNpgsql(connectionString)
             );
         }

@@ -1,0 +1,10 @@
+<section class="welcome">
+    <h1>JS QUEST</h1>
+    <p>The door to the dungeon stands open before you, the scent of stale air wafting out from the darkness.
+        Many have braved the dungeon depths, never to return. Do you possess the courage to venture forth into
+        danger to seek fame and fortune?</p>
+    <div class="welcome__entry">
+        <entry-form [playerSearch]="playerSearch$ | async"
+                    (nameSubmitted)="playerEntry($event)"></entry-form>
+    </div>
+</section>

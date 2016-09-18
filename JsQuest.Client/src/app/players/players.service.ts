@@ -5,18 +5,16 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class PlayersService {
-  private API_PATH: string = 'http://localhost:5000/api/players';
+    static ERROR_NO_NAME: string = 'You must provide a name before venturing forth!';
+    private API_PATH: string = 'http://localhost:5000/api/players';
 
-  constructor(private http: Http) {
+    constructor(private http: Http) {}
 
-  }
+    findPlayer(id: Number): Observable<Player> {
+        return this.http.get(`${this.API_PATH}/${id}`).map(res => res.json());
+    }
 
-  findPlayer(id): Observable<Player> {
-    return this.http.get(`${this.API_PATH}/${id}`).map(res => res.json());
-  }
-
-  searchPlayers(name): Observable<Player[]>  {
-    return this.http.get(`${this.API_PATH}`).map(res => res.json());
-  }
-
+    searchPlayers(email: string): Observable<Player[]>  {
+        return this.http.get(`${this.API_PATH}?email=${email}`).map(res => res.json());
+    }
 }

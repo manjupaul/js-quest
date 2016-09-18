@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=VT323|Press+Start+2P);
+
+$pstart: "Press Start 2P", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$vt323: "VT323", Georgia, Times New Roman, serif;
+
+
+body {
+    font-family: $vt323;
+}
+
+h1 {
+    font-family: $pstart;
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-family: $pstart;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.6rem;
+}

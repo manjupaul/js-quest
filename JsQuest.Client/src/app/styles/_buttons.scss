@@ -1,0 +1,16 @@
+.button {
+    font-family: $pstart;
+    color: #f2f2f2;
+    background: transparent;
+    font-size: 0.9rem;
+    padding: 1rem 1.4rem;
+    line-height: 1.2;
+    border: 1px solid #f2f2f2;
+    cursor: pointer;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in, background-color 0.1s ease-in;
+
+    &:hover {
+        background-color: #ccc;
+        color: #333;
+    }
+}

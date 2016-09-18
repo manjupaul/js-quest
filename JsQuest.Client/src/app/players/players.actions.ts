@@ -7,6 +7,7 @@ export class PlayerActions {
 
     static SEARCH = '[Player] Search';
     static SEARCH_COMPLETE = '[Player] Search Complete';
+    static SELECT_PLAYER = '[Player] Selected Player';
 
     search(name: string): Action {
         return {
